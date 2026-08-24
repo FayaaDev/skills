@@ -1,0 +1,17 @@
+{
+  "endpoint": "https://graphql.haraj.com.sa/?clientId=ukCF3x0g-lr4r-fkTY-1Uqm-YZs991uGF01vv3&version=N0.0.1%20,%202026-08-11%2022%2F",
+  "operations": {
+    "search": {
+      "queryName": "search",
+      "document": "query Search($search: String!, $city: String, $cities: [String], $tag: String, $tags: [String], $page: Int, $limit: Int, $near: String, $onlyWithImage: Boolean, $onlyWithVideo: Boolean, $duringDate: String, $hideShowRooms: Boolean, $orderByPostId: Boolean) { search(search: $search, city: $city, cities: $cities, tag: $tag, tags: $tags, page: $page, limit: $limit, near: $near, onlyWithImage: $onlyWithImage, onlyWithVideo: $onlyWithVideo, duringDate: $duringDate, hideShowRooms: $hideShowRooms, orderByPostId: $orderByPostId) { items { id title postDate updateDate authorUsername URL bodyTEXT thumbURL hasImage hasVideo city geoCity geoNeighborhood geoHash tags imagesList commentCount upRank downRank postType generalInfo { key value } price { formattedPrice inputPrice } realEstateInfo { re_REGA_Advertiser_registration_number re_REGA_Authorization_number } carInfo { sellOrWaiver is4DW model mileage fuel gear condition carOrRelated Bank } jobsInfo { jobs_OfferType jobs_ExperienceLevel jobs_ContractType jobs_Qualification jobs_CommercialeRgisterNumber } } pageInfo { hasNextPage } viewOptions { hasSellersList } } }",
+      "variables": { "page": 0, "limit": 20, "onlyWithImage": true },
+      "resultsPath": "search.items"
+    },
+    "get": {
+      "queryName": "posts",
+      "document": "query GetPost($id: [Int]) { posts(id: $id) { items { id title postDate updateDate authorUsername URL bodyTEXT thumbURL hasImage hasVideo city geoCity geoNeighborhood geoHash tags imagesList commentCount upRank downRank postType generalInfo { key value } price { formattedPrice inputPrice } realEstateInfo { re_REGA_Advertiser_registration_number re_REGA_Authorization_number } carInfo { sellOrWaiver is4DW model mileage fuel gear condition carOrRelated Bank } jobsInfo { jobs_OfferType jobs_ExperienceLevel jobs_ContractType jobs_Qualification jobs_CommercialeRgisterNumber } } } }",
+      "idVariable": "id",
+      "resultPath": "posts.items.0"
+    }
+  }
+}
