@@ -1,21 +1,26 @@
 {
-  "name": "haraj-cli",
-  "version": "0.1.0",
+  "name": "fayaadev-skills",
   "private": true,
   "type": "module",
-  "bin": {
-    "haraj": "dist/bin.js"
+  "packageManager": "bun@1.4.0",
+  "engines": {
+    "node": ">=18"
   },
+  "workspaces": [
+    "harajcli",
+    "aqarcli"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "check": "tsc -p tsconfig.json --noEmit",
-    "test": "tsx --test test/**/*.test.ts",
-    "dev": "tsx src/bin.ts",
-    "prepare": "npm run build"
-  },
-  "devDependencies": {
-    "@types/node": "^22.15.3",
-    "tsx": "^4.19.3",
-    "typescript": "^5.8.3"
+    "build": "bun run build:skill",
+    "build:skill": "bun build harajcli/src/bin.ts --target=node --format=esm --outfile skills/souq/scripts/haraj.mjs && bun build aqarcli/src/bin.ts --target=node --format=esm --outfile skills/souq/scripts/aqar.mjs && cp harajcli/haraj.config.json skills/souq/haraj.config.json && cp aqarcli/aqar.config.json skills/souq/aqar.config.json",
+    "check": "bun run check:haraj && bun run check:aqar",
+    "check:haraj": "bun run --cwd harajcli check",
+    "check:aqar": "bun run --cwd aqarcli check",
+    "test": "bun run build:skill && bun run test:haraj && bun run test:aqar && node --test test/packaged-runners.test.mjs",
+    "test:haraj": "bun run --cwd harajcli test",
+    "test:aqar": "bun run --cwd aqarcli test",
+    "build:haraj": "bun run --cwd harajcli build",
+    "build:aqar": "bun run --cwd aqarcli build",
+    "verify": "bun run check && bun run test && bun run build:haraj && bun run build:aqar"
   }
 }

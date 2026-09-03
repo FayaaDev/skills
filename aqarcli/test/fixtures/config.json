@@ -1,0 +1,27 @@
+{
+  "endpoint": "https://api.example.test/graphql",
+  "headers": { "x-api-key": "${AQAR_TEST_TOKEN}" },
+  "operations": {
+    "search": {
+      "document": "query Search($city: String) { search { id } }",
+      "variables": { "page": 1, "filters": { "active": true } },
+      "resultsPath": "search.results"
+    },
+    "get": {
+      "document": "query Get($id: Int!) { listing { id } }",
+      "idVariable": "id",
+      "resultPath": "listing"
+    }
+  },
+  "listing": {
+    "id": "id",
+    "title": "title",
+    "price": "price.amount",
+    "currency": "price.currency",
+    "city": "location.city",
+    "district": "location.district",
+    "propertyType": "type",
+    "areaSqm": "area",
+    "url": "url"
+  }
+}

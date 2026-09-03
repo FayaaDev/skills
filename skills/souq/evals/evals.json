@@ -1,0 +1,167 @@
+{
+  "skill_name": "souq",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Find up to 3 apartments for rent in Al Narjis, Riyadh, with annual rent no more than SAR 60,000. Give me a concise Markdown comparison.",
+      "expected_output": "Runs structured Aqar and approximate Haraj searches, then presents Haraj and Aqar sections with at most three results per source and clear filter-fidelity notes.",
+      "files": [],
+      "expectations": [
+        "Command evidence invokes `node \"$SKILL_DIR/scripts/aqar.mjs\" search` with city, district, rent purpose, apartment type, maximum price, limit 3, and `--json`.",
+        "Command evidence invokes `node \"$SKILL_DIR/scripts/haraj.mjs\" search` with a focused apartment-rental keyword, Riyadh, limit 3, and `--json`.",
+        "The response contains exactly two marketplace sections: `## Haraj` followed by `## Aqar`.",
+        "The response explains that Haraj did not enforce structured district, purpose, type, or maximum-price filters.",
+        "Each returned listing includes an ID, price when available, and canonical URL."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Show me up to 5 villas for sale in Jeddah with at least 300 square meters and a maximum price of SAR 2 million.",
+      "expected_output": "Queries both marketplaces, uses Aqar's structured filters where supported, approximates the Haraj search, and discloses unsupported Haraj area and price constraints.",
+      "files": [],
+      "expectations": [
+        "Both Aqar and Haraj bundled runner searches are evidenced, with `--limit 5` and `--json`.",
+        "The response contains exactly two marketplace sections: `## Haraj` followed by `## Aqar`.",
+        "The response explains that neither CLI has a structured area filter, that Aqar area may only be filtered from returned candidates, and that Haraj cannot enforce area from its normalized results.",
+        "The response does not claim that Haraj natively enforced maximum price.",
+        "No more than five listings appear in either marketplace section."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Find up to 4 Toyota Camry ads in Riyadh posted during the last week.",
+      "expected_output": "Treats the vehicle request as non-real-estate and searches Haraj only.",
+      "files": [],
+      "expectations": [
+        "Command evidence invokes `node \"$SKILL_DIR/scripts/haraj.mjs\" search` with a Camry keyword, Riyadh, `--during-date 1week`, `--limit 4`, and `--json`.",
+        "No Aqar command is invoked.",
+        "The response contains no Aqar results section."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Compare three used RTX 4090 ads in Saudi Arabia.",
+      "expected_output": "Treats the electronics request as non-real-estate and searches Haraj only.",
+      "files": [],
+      "expectations": [
+        "Command evidence invokes `node \"$SKILL_DIR/scripts/haraj.mjs\" search` with an RTX 4090 keyword, `--limit 3`, and `--json`.",
+        "No Aqar command is invoked.",
+        "Every presented result is attributable to Haraj and preserves its canonical URL."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Find me two apartments for rent in Riyadh and two used Camrys in Riyadh.",
+      "expected_output": "Partitions the mixed request: searches both sources for apartments and Haraj only for cars.",
+      "files": [],
+      "expectations": [
+        "Command evidence includes Aqar and Haraj property searches with limit 2.",
+        "Command evidence includes a separate Haraj Camry search with limit 2.",
+        "Aqar is not used for the vehicle portion.",
+        "The property results contain exactly two marketplace sections: `## Haraj` followed by `## Aqar`."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Search Aqar only for three apartments for rent in Riyadh.",
+      "expected_output": "Honors the explicit source restriction and searches only Aqar.",
+      "files": [],
+      "expectations": [
+        "Command evidence invokes `node \"$SKILL_DIR/scripts/aqar.mjs\" search` with rent and apartment filters, limit 3, and `--json`.",
+        "No Haraj command is invoked.",
+        "The response presents only Aqar results."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Look up this property ad and summarize it: https://haraj.com.sa/11187108979/example/",
+      "expected_output": "Recognizes the Haraj URL and performs a source-specific Haraj detail lookup.",
+      "files": [],
+      "expectations": [
+        "Command evidence invokes `node \"$SKILL_DIR/scripts/haraj.mjs\" get` with the URL or parsed listing ID and `--json`.",
+        "No Aqar command is invoked.",
+        "The response preserves the canonical Haraj URL and does not invent missing property fields."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Get property listing 6736135 and show me its details.",
+      "expected_output": "Does not guess the marketplace for an ambiguous bare numeric ID and asks the user to identify Haraj or Aqar.",
+      "files": [],
+      "expectations": [
+        "The response asks which marketplace owns listing 6736135.",
+        "Neither CLI is invoked.",
+        "The response does not probe both sources."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Format this completed real-estate search as a concise Markdown response without making network calls. Haraj succeeded with [{\"id\":11,\"title\":\"شقة للبيع بالرياض\",\"price\":500000,\"city\":\"الرياض\",\"url\":\"https://haraj.com.sa/111\"}]. Aqar failed with error \"request timed out\".",
+      "expected_output": "Uses the supplied outcomes, retains successful Haraj results, and shows the Aqar failure in the required two-section format without invoking either CLI.",
+      "files": [],
+      "expectations": [
+        "No marketplace command is invoked because completed source outcomes were supplied.",
+        "The response contains exactly two marketplace sections: `## Haraj` followed by `## Aqar`.",
+        "Successful Haraj results remain visible.",
+        "The Aqar section reports its error and the response is labeled partial."
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Format these completed warehouse-search outcomes as Markdown without making network calls or relaxing filters. Haraj returned [{\"id\":22,\"title\":\"مستودع للإيجار في أبها\",\"price\":80000,\"city\":\"أبها\",\"url\":\"https://haraj.com.sa/222\"}]. Aqar returned an empty array.",
+      "expected_output": "Uses the supplied outcomes, reports Aqar's empty state, preserves Haraj results, and does not broaden the search.",
+      "files": [],
+      "expectations": [
+        "No marketplace command is invoked because completed source outcomes were supplied.",
+        "The response contains exactly two marketplace sections: `## Haraj` followed by `## Aqar`.",
+        "The Aqar section explicitly states that no matches were returned while the Haraj section preserves its results.",
+        "No second search with broader filters is invoked without user approval."
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Find up to two villas for sale in Dammam and return combined JSON only.",
+      "expected_output": "Queries both sources and returns a marketplace-attributed JSON envelope rather than Markdown or a mixed-schema array.",
+      "files": [],
+      "expectations": [
+        "Both marketplace searches use their bundled runners with limit 2 and `--json`.",
+        "The final output is valid JSON with `queryKind`, `limitPerMarketplace`, `sourcesRequested`, and `sections`.",
+        "The `sections` object contains `haraj` and `aqar`, each with status, results, and limitations.",
+        "The final output contains no Markdown headings or prose wrapper."
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Add a tenant maintenance workflow to my property-management application.",
+      "expected_output": "Does not use Souq because this is a software-development request rather than a Saudi marketplace search or listing lookup.",
+      "files": [],
+      "expectations": [
+        "Neither Haraj nor Aqar is invoked.",
+        "The response addresses application development rather than marketplace listings."
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "Look up this Aqar listing and return its normalized details: https://sa.aqar.fm/ad/6736135",
+      "expected_output": "Recognizes the Aqar URL and performs a source-specific Aqar detail lookup without querying Haraj.",
+      "files": [],
+      "expectations": [
+        "Command evidence invokes `node \"$SKILL_DIR/scripts/aqar.mjs\" get` with the URL or parsed ID 6736135 and `--json`.",
+        "No Haraj command is invoked.",
+        "The response preserves the canonical Aqar URL and does not invent a named property type from a numeric category code."
+      ]
+    },
+    {
+      "id": 14,
+      "prompt": "Format this completed real-estate search as a concise Markdown response without making network calls. Haraj failed with error \"request timed out\". Aqar succeeded with [{\"id\":33,\"title\":\"شقة للبيع في الخبر\",\"price\":700000,\"city\":\"الخبر\",\"district\":\"العقربية\",\"url\":\"https://sa.aqar.fm/33\"}].",
+      "expected_output": "Uses the supplied outcomes, retains successful Aqar results, and shows the Haraj failure in the required two-section format without invoking either CLI.",
+      "files": [],
+      "expectations": [
+        "No marketplace command is invoked because completed source outcomes were supplied.",
+        "The response contains exactly two marketplace sections: `## Haraj` followed by `## Aqar`.",
+        "The Haraj section reports its error and the response is labeled partial.",
+        "Successful Aqar results remain visible in the Aqar section."
+      ]
+    }
+  ]
+}

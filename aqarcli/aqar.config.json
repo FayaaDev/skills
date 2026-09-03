@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://sa.aqar.fm/graphql",
+  "operations": {
+    "search": {
+      "document": "query SearchListings($where: WhereInput, $sort: SortInput, $size: Int, $from: Int) { Web { find(where: $where, sort: $sort, size: $size, from: $from) { listings { id title price area rooms category type city district path } } } }",
+      "variables": {
+        "sort": { "refresh": "desc" },
+        "size": 20,
+        "from": 0
+      },
+      "resultsPath": "Web.find.listings"
+    },
+    "get": {
+      "document": "query GetListing($id: Int!) { Web { listing(id: $id) { id title price area rooms category type city district path } } }",
+      "idVariable": "id",
+      "resultPath": "Web.listing"
+    }
+  },
+  "listing": {
+    "id": "id",
+    "title": "title",
+    "price": "price",
+    "city": "city",
+    "district": "district",
+    "propertyType": "category",
+    "areaSqm": "area",
+    "url": "path"
+  }
+}

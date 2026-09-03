@@ -1,0 +1,2745 @@
+{
+  "$comment": "Field inventory of Aqar's internal GraphQL schema captured via introspection on 2026-08-24. Internal and unsupported endpoint; fields may change without notice.",
+  "endpoint": "https://sa.aqar.fm/graphql",
+  "introspectedAt": "2026-08-24T06:49:22.991Z",
+  "rootQueryType": "Query",
+  "rootQueries": [
+    {
+      "name": "Info",
+      "returns": "InfoQryOps",
+      "args": []
+    },
+    {
+      "name": "User",
+      "returns": "UserQryOps",
+      "args": []
+    },
+    {
+      "name": "PublicUser",
+      "returns": "PublicUserQryOps",
+      "args": []
+    },
+    {
+      "name": "Listing",
+      "returns": "ListingQryOps",
+      "args": []
+    },
+    {
+      "name": "Search",
+      "returns": "SearchQryOps",
+      "args": []
+    },
+    {
+      "name": "Web",
+      "returns": "WebQryOps",
+      "args": []
+    },
+    {
+      "name": "News",
+      "returns": "NewsQryOps",
+      "args": []
+    },
+    {
+      "name": "Rating",
+      "returns": "RatingQryOps",
+      "args": []
+    },
+    {
+      "name": "Offices",
+      "returns": "OfficesQryOps",
+      "args": []
+    },
+    {
+      "name": "LegalConsultation",
+      "returns": "LegalConsultationQryOps",
+      "args": []
+    },
+    {
+      "name": "HomePlans",
+      "returns": "HomePlansOpenQryOps",
+      "args": []
+    },
+    {
+      "name": "ThreeDimensionalDesigns",
+      "returns": "ThreeDimensionalOpenQryOps",
+      "args": []
+    },
+    {
+      "name": "BankLoans",
+      "returns": "bankLoansOpenQryOps",
+      "args": []
+    },
+    {
+      "name": "MojStats",
+      "returns": "MojStatsQryOps",
+      "args": []
+    },
+    {
+      "name": "ListingTitling",
+      "returns": "TitlingQryOps",
+      "args": []
+    },
+    {
+      "name": "AqarPlus",
+      "returns": "AqarPlusQryOps",
+      "args": []
+    },
+    {
+      "name": "DailyRenting",
+      "returns": "DailyRentingQryOps",
+      "args": []
+    },
+    {
+      "name": "RealEstateProjects",
+      "returns": "RealEstateProjectsQryOps",
+      "args": []
+    },
+    {
+      "name": "ListingComments",
+      "returns": "ListingCommentsQryOps",
+      "args": []
+    },
+    {
+      "name": "ListingAuction",
+      "returns": "ListingAuctionQryOps",
+      "args": []
+    },
+    {
+      "name": "DistrictBroker",
+      "returns": "DistrictBrokerOpenQryOps",
+      "args": []
+    },
+    {
+      "name": "RealEstateDeveloper",
+      "returns": "RealEstateDeveloperQryOps",
+      "args": []
+    },
+    {
+      "name": "ResidentialIndicators",
+      "returns": "ResidentialIndicatorsQryOps",
+      "args": []
+    },
+    {
+      "name": "PubServer",
+      "returns": "PubServerQryOps",
+      "args": []
+    },
+    {
+      "name": "Kevel",
+      "returns": "KevelQryOps",
+      "args": []
+    },
+    {
+      "name": "CustomList",
+      "returns": "CustomListQryOps",
+      "args": []
+    }
+  ],
+  "types": {
+    "Listing": {
+      "fields": [
+        {
+          "name": "id",
+          "type": "Int"
+        },
+        {
+          "name": "_id",
+          "type": "Int"
+        },
+        {
+          "name": "create_time",
+          "type": "Float"
+        },
+        {
+          "name": "published_at",
+          "type": "Float"
+        },
+        {
+          "name": "last_update",
+          "type": "Float"
+        },
+        {
+          "name": "refresh",
+          "type": "Float"
+        },
+        {
+          "name": "category",
+          "type": "Int"
+        },
+        {
+          "name": "has_img",
+          "type": "Int"
+        },
+        {
+          "name": "special",
+          "type": "Int"
+        },
+        {
+          "name": "imgs",
+          "type": "[String]"
+        },
+        {
+          "name": "imgs_desc",
+          "type": "[String]"
+        },
+        {
+          "name": "status",
+          "type": "Int"
+        },
+        {
+          "name": "support_imgs",
+          "type": "[String]"
+        },
+        {
+          "name": "support_imgs_desc",
+          "type": "[String]"
+        },
+        {
+          "name": "premium",
+          "type": "Int"
+        },
+        {
+          "name": "price",
+          "type": "Float"
+        },
+        {
+          "name": "price_2_payments",
+          "type": "Float"
+        },
+        {
+          "name": "price_4_payments",
+          "type": "Float"
+        },
+        {
+          "name": "price_12_payments",
+          "type": "Float"
+        },
+        {
+          "name": "wc",
+          "type": "Int"
+        },
+        {
+          "name": "meter_price",
+          "type": "Float"
+        },
+        {
+          "name": "age",
+          "type": "Int"
+        },
+        {
+          "name": "area",
+          "type": "Float"
+        },
+        {
+          "name": "fl",
+          "type": "Int"
+        },
+        {
+          "name": "rent_period",
+          "type": "Int"
+        },
+        {
+          "name": "accept_monthly",
+          "type": "Boolean"
+        },
+        {
+          "name": "accept_quarterly",
+          "type": "Boolean"
+        },
+        {
+          "name": "accept_semiannually",
+          "type": "Boolean"
+        },
+        {
+          "name": "beds",
+          "type": "Int"
+        },
+        {
+          "name": "ketchen",
+          "type": "Int"
+        },
+        {
+          "name": "livings",
+          "type": "Int"
+        },
+        {
+          "name": "men_place",
+          "type": "Int"
+        },
+        {
+          "name": "women_place",
+          "type": "Int"
+        },
+        {
+          "name": "apts",
+          "type": "Int"
+        },
+        {
+          "name": "stores",
+          "type": "Int"
+        },
+        {
+          "name": "duplex",
+          "type": "Int"
+        },
+        {
+          "name": "furnished",
+          "type": "Int"
+        },
+        {
+          "name": "driver",
+          "type": "Int"
+        },
+        {
+          "name": "maid",
+          "type": "Int"
+        },
+        {
+          "name": "basement",
+          "type": "Int"
+        },
+        {
+          "name": "lift",
+          "type": "Int"
+        },
+        {
+          "name": "pool",
+          "type": "Int"
+        },
+        {
+          "name": "stairs",
+          "type": "Int"
+        },
+        {
+          "name": "fb",
+          "type": "Int"
+        },
+        {
+          "name": "vb",
+          "type": "Int"
+        },
+        {
+          "name": "tent",
+          "type": "Int"
+        },
+        {
+          "name": "rooms",
+          "type": "Int"
+        },
+        {
+          "name": "wells",
+          "type": "Int"
+        },
+        {
+          "name": "trees",
+          "type": "Int"
+        },
+        {
+          "name": "backyard",
+          "type": "Int"
+        },
+        {
+          "name": "playground",
+          "type": "Int"
+        },
+        {
+          "name": "family",
+          "type": "Int"
+        },
+        {
+          "name": "family_section",
+          "type": "Int"
+        },
+        {
+          "name": "street_direction",
+          "type": "Int"
+        },
+        {
+          "name": "street_width",
+          "type": "Int"
+        },
+        {
+          "name": "type",
+          "type": "Int"
+        },
+        {
+          "name": "car_entrance",
+          "type": "Int"
+        },
+        {
+          "name": "ac",
+          "type": "Int"
+        },
+        {
+          "name": "location",
+          "type": "Location"
+        },
+        {
+          "name": "boosted",
+          "type": "Int"
+        },
+        {
+          "name": "address",
+          "type": "String"
+        },
+        {
+          "name": "content",
+          "type": "String"
+        },
+        {
+          "name": "content_en",
+          "type": "String"
+        },
+        {
+          "name": "services",
+          "type": "[Service]"
+        },
+        {
+          "name": "uri",
+          "type": "String"
+        },
+        {
+          "name": "city_id",
+          "type": "Int"
+        },
+        {
+          "name": "direction_id",
+          "type": "Int"
+        },
+        {
+          "name": "district_id",
+          "type": "Int"
+        },
+        {
+          "name": "province_id",
+          "type": "Int"
+        },
+        {
+          "name": "views",
+          "type": "Int"
+        },
+        {
+          "name": "user",
+          "type": "ListingUser"
+        },
+        {
+          "name": "user_id",
+          "type": "Int"
+        },
+        {
+          "name": "user_type",
+          "type": "Int"
+        },
+        {
+          "name": "extra_unit",
+          "type": "Int"
+        },
+        {
+          "name": "verified",
+          "type": "Int"
+        },
+        {
+          "name": "has_video",
+          "type": "Int"
+        },
+        {
+          "name": "videos",
+          "type": "[Video]"
+        },
+        {
+          "name": "cf_videos",
+          "type": "[CfVideo]"
+        },
+        {
+          "name": "subscription",
+          "type": "ListingSubscription"
+        },
+        {
+          "name": "employee",
+          "type": "ListingEmployee"
+        },
+        {
+          "name": "employee_user_id",
+          "type": "Int"
+        },
+        {
+          "name": "mgr_user_id",
+          "type": "Int"
+        },
+        {
+          "name": "stc_coverage",
+          "type": "StcCoverage"
+        },
+        {
+          "name": "deed_id",
+          "type": "String"
+        },
+        {
+          "name": "owner_name",
+          "type": "String"
+        },
+        {
+          "name": "owner_id",
+          "type": "String"
+        },
+        {
+          "name": "owner_id_type",
+          "type": "DeedIdTypes"
+        },
+        {
+          "name": "is_rent",
+          "type": "Boolean"
+        },
+        {
+          "name": "capacity",
+          "type": "Int"
+        },
+        {
+          "name": "phone_1",
+          "type": "Int"
+        },
+        {
+          "name": "phone_2",
+          "type": "Int"
+        },
+        {
+          "name": "assigned_to",
+          "type": "Int"
+        },
+        {
+          "name": "approved",
+          "type": "Int"
+        },
+        {
+          "name": "gh_id",
+          "type": "Boolean"
+        },
+        {
+          "name": "inspector_images",
+          "type": "[String]"
+        },
+        {
+          "name": "building_no",
+          "type": "Int"
+        },
+        {
+          "name": "unique_listing",
+          "type": "Int"
+        },
+        {
+          "name": "advertiser_type",
+          "type": "AdvertiserTypes"
+        },
+        {
+          "name": "structure",
+          "type": "Int"
+        },
+        {
+          "name": "appraisal_id",
+          "type": "Int"
+        },
+        {
+          "name": "appraisal",
+          "type": "Appraisal"
+        },
+        {
+          "name": "virtual_tour_link",
+          "type": "String"
+        },
+        {
+          "name": "rnpl_monthly_price",
+          "type": "Float"
+        },
+        {
+          "name": "accurate_location",
+          "type": "Boolean"
+        },
+        {
+          "name": "private_listing",
+          "type": "Boolean"
+        },
+        {
+          "name": "blur",
+          "type": "Boolean"
+        },
+        {
+          "name": "location_circle_radius",
+          "type": "CircleRadius"
+        },
+        {
+          "name": "map_premium_services",
+          "type": "[ListingPremiumService]"
+        },
+        {
+          "name": "plan_no",
+          "type": "String"
+        },
+        {
+          "name": "parcel_no",
+          "type": "String"
+        },
+        {
+          "name": "show_parcel_info",
+          "type": "Boolean"
+        },
+        {
+          "name": "project_id",
+          "type": "Int"
+        },
+        {
+          "name": "project",
+          "type": "RealEstatesProject"
+        },
+        {
+          "name": "width",
+          "type": "Float"
+        },
+        {
+          "name": "length",
+          "type": "Float"
+        },
+        {
+          "name": "water_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "electrical_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "drainage_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "private_roof",
+          "type": "Boolean"
+        },
+        {
+          "name": "apartment_in_villa",
+          "type": "Boolean"
+        },
+        {
+          "name": "two_entrances",
+          "type": "Boolean"
+        },
+        {
+          "name": "special_entrance",
+          "type": "Boolean"
+        },
+        {
+          "name": "daily_rentable",
+          "type": "Boolean"
+        },
+        {
+          "name": "closed_reason",
+          "type": "String"
+        },
+        {
+          "name": "closed_by",
+          "type": "String"
+        },
+        {
+          "name": "has_extended_details",
+          "type": "Boolean"
+        },
+        {
+          "name": "hide_contact_details",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_phone",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_whatsapp",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_message",
+          "type": "Boolean"
+        },
+        {
+          "name": "unit_code",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit",
+          "type": "Boolean"
+        },
+        {
+          "name": "bookable_unit_plans",
+          "type": "[String]"
+        },
+        {
+          "name": "bookable_unit_down_payment",
+          "type": "Float"
+        },
+        {
+          "name": "bookable_unit_interested_users_count",
+          "type": "Int"
+        },
+        {
+          "name": "bookable_unit_developer_id",
+          "type": "Int"
+        },
+        {
+          "name": "bookable_unit_project_status",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_type",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_title",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_title_en",
+          "type": "String"
+        },
+        {
+          "name": "rega_advertisement_details_id",
+          "type": "Int"
+        },
+        {
+          "name": "ad_license_number",
+          "type": "String"
+        },
+        {
+          "name": "off_plan_license_number",
+          "type": "String"
+        },
+        {
+          "name": "deed_number",
+          "type": "String"
+        },
+        {
+          "name": "deed_area",
+          "type": "Float"
+        },
+        {
+          "name": "usages",
+          "type": "[String]"
+        },
+        {
+          "name": "rega_licensed",
+          "type": "Boolean"
+        },
+        {
+          "name": "rega_license_url",
+          "type": "String"
+        },
+        {
+          "name": "published",
+          "type": "Boolean"
+        },
+        {
+          "name": "comments_enabled",
+          "type": "Boolean"
+        },
+        {
+          "name": "commission_type",
+          "type": "CommissionTypes"
+        },
+        {
+          "name": "commission_percentage",
+          "type": "Float"
+        },
+        {
+          "name": "commission_amount",
+          "type": "Float"
+        },
+        {
+          "name": "biddable",
+          "type": "Boolean"
+        },
+        {
+          "name": "sov_campaign_id",
+          "type": "Int"
+        },
+        {
+          "name": "obligations_on_the_property",
+          "type": "String"
+        },
+        {
+          "name": "guarantees_and_their_duration",
+          "type": "String"
+        },
+        {
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "name": "end_date",
+          "type": "String"
+        },
+        {
+          "name": "ad_source",
+          "type": "String"
+        },
+        {
+          "name": "property_usages_list",
+          "type": "String"
+        },
+        {
+          "name": "compliance_with_the_saudi_building_code",
+          "type": "Boolean"
+        },
+        {
+          "name": "location_region",
+          "type": "String"
+        },
+        {
+          "name": "location_city",
+          "type": "String"
+        },
+        {
+          "name": "location_district",
+          "type": "String"
+        },
+        {
+          "name": "location_street",
+          "type": "String"
+        },
+        {
+          "name": "location_postal_code",
+          "type": "String"
+        },
+        {
+          "name": "location_building_number",
+          "type": "String"
+        },
+        {
+          "name": "location_additional_number",
+          "type": "String"
+        },
+        {
+          "name": "mot_license_number",
+          "type": "String"
+        },
+        {
+          "name": "whatsapp_requested_count",
+          "type": "Int"
+        },
+        {
+          "name": "whatsapp_responded_count",
+          "type": "Int"
+        },
+        {
+          "name": "precise_location_request_status",
+          "type": "String"
+        },
+        {
+          "name": "precise_location_request_approved_at",
+          "type": "Float"
+        },
+        {
+          "name": "is_exclusive",
+          "type": "Boolean"
+        },
+        {
+          "name": "has_multiple_units",
+          "type": "Boolean"
+        },
+        {
+          "name": "villa_type",
+          "type": "VillaTypes"
+        },
+        {
+          "name": "near_bus",
+          "type": "Boolean"
+        },
+        {
+          "name": "near_metro",
+          "type": "Boolean"
+        },
+        {
+          "name": "freehold_zone",
+          "type": "Boolean"
+        },
+        {
+          "name": "white_lands_percentage",
+          "type": "Float"
+        },
+        {
+          "name": "rega_total_price",
+          "type": "Float"
+        },
+        {
+          "name": "rega_meter_price",
+          "type": "Float"
+        },
+        {
+          "name": "is_auction",
+          "type": "Boolean"
+        },
+        {
+          "name": "is_unique_deed",
+          "type": "Boolean"
+        },
+        {
+          "name": "auction_end_date",
+          "type": "Float"
+        },
+        {
+          "name": "document_pdf",
+          "type": "String"
+        },
+        {
+          "name": "is_precise_location",
+          "type": "Boolean"
+        },
+        {
+          "name": "range_price",
+          "type": "Float"
+        },
+        {
+          "name": "original_range_price",
+          "type": "Float"
+        },
+        {
+          "name": "daily_renting_discount_reason",
+          "type": "DailyRentingDiscountReasons"
+        },
+        {
+          "name": "alert_box",
+          "type": "ListingAlertBox"
+        }
+      ]
+    },
+    "ListingUser": {
+      "fields": [
+        {
+          "name": "phone",
+          "type": "Float"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "img",
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "type": "Int"
+        },
+        {
+          "name": "paid",
+          "type": "Int"
+        },
+        {
+          "name": "fee",
+          "type": "Int"
+        },
+        {
+          "name": "review",
+          "type": "Float"
+        },
+        {
+          "name": "iam_verified",
+          "type": "Boolean"
+        },
+        {
+          "name": "rega_id",
+          "type": "String"
+        },
+        {
+          "name": "bml_license_number",
+          "type": "String"
+        },
+        {
+          "name": "bml_url",
+          "type": "String"
+        },
+        {
+          "name": "company_name",
+          "type": "String"
+        },
+        {
+          "name": "company_logo",
+          "type": "String"
+        }
+      ]
+    },
+    "User": {
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "Int"
+        },
+        {
+          "name": "phone",
+          "type": "Float"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "iam_name",
+          "type": "String"
+        },
+        {
+          "name": "img",
+          "type": "String"
+        },
+        {
+          "name": "about",
+          "type": "String"
+        },
+        {
+          "name": "create_time",
+          "type": "Int"
+        },
+        {
+          "name": "verified",
+          "type": "Int"
+        },
+        {
+          "name": "status",
+          "type": "Int"
+        },
+        {
+          "name": "ability",
+          "type": "Int"
+        },
+        {
+          "name": "type",
+          "type": "Int"
+        },
+        {
+          "name": "paid",
+          "type": "Int"
+        },
+        {
+          "name": "fee",
+          "type": "Int"
+        },
+        {
+          "name": "role",
+          "type": "Int"
+        },
+        {
+          "name": "ae",
+          "type": "Int"
+        },
+        {
+          "name": "pe",
+          "type": "Int"
+        },
+        {
+          "name": "le",
+          "type": "Int"
+        },
+        {
+          "name": "ue",
+          "type": "Int"
+        },
+        {
+          "name": "user_type",
+          "type": "Int"
+        },
+        {
+          "name": "favs",
+          "type": "Int"
+        },
+        {
+          "name": "review",
+          "type": "Float"
+        },
+        {
+          "name": "manager_id",
+          "type": "Int"
+        },
+        {
+          "name": "manager_paid",
+          "type": "Int"
+        },
+        {
+          "name": "office_location",
+          "type": "Location"
+        },
+        {
+          "name": "office_logo",
+          "type": "String"
+        },
+        {
+          "name": "office_phone",
+          "type": "String"
+        },
+        {
+          "name": "sub_from",
+          "type": "Int"
+        },
+        {
+          "name": "bml_license_number",
+          "type": "String"
+        },
+        {
+          "name": "bml_url",
+          "type": "String"
+        },
+        {
+          "name": "followers_count",
+          "type": "Int"
+        },
+        {
+          "name": "following_count",
+          "type": "Int"
+        },
+        {
+          "name": "points_balance",
+          "type": "Int"
+        },
+        {
+          "name": "completed_deals",
+          "type": "Int"
+        },
+        {
+          "name": "company_logo",
+          "type": "String"
+        },
+        {
+          "name": "company_name",
+          "type": "String"
+        },
+        {
+          "name": "company_cr",
+          "type": "String"
+        },
+        {
+          "name": "cooperative",
+          "type": "Boolean"
+        },
+        {
+          "name": "archived_listings",
+          "type": "Int"
+        },
+        {
+          "name": "sub_users_count",
+          "type": "Int"
+        },
+        {
+          "name": "listings",
+          "type": "Int"
+        },
+        {
+          "name": "crm",
+          "type": "Boolean"
+        },
+        {
+          "name": "last_seen",
+          "type": "Float"
+        },
+        {
+          "name": "can_boost",
+          "type": "Boolean"
+        },
+        {
+          "name": "enable_video",
+          "type": "Int"
+        },
+        {
+          "name": "iam_verified",
+          "type": "Boolean"
+        }
+      ]
+    },
+    "PublicUser": {
+      "fields": [
+        {
+          "name": "user",
+          "type": "PublicUserData"
+        },
+        {
+          "name": "public_token",
+          "type": "String"
+        }
+      ]
+    },
+    "WebListing": {
+      "fields": [
+        {
+          "name": "title",
+          "type": "String"
+        },
+        {
+          "name": "path",
+          "type": "String"
+        },
+        {
+          "name": "city",
+          "type": "String"
+        },
+        {
+          "name": "direction",
+          "type": "String"
+        },
+        {
+          "name": "district",
+          "type": "String"
+        },
+        {
+          "name": "id",
+          "type": "Int"
+        },
+        {
+          "name": "_id",
+          "type": "Int"
+        },
+        {
+          "name": "create_time",
+          "type": "Float"
+        },
+        {
+          "name": "published_at",
+          "type": "Float"
+        },
+        {
+          "name": "last_update",
+          "type": "Float"
+        },
+        {
+          "name": "refresh",
+          "type": "Float"
+        },
+        {
+          "name": "category",
+          "type": "Int"
+        },
+        {
+          "name": "has_img",
+          "type": "Int"
+        },
+        {
+          "name": "special",
+          "type": "Int"
+        },
+        {
+          "name": "imgs",
+          "type": "[String]"
+        },
+        {
+          "name": "imgs_desc",
+          "type": "[String]"
+        },
+        {
+          "name": "status",
+          "type": "Int"
+        },
+        {
+          "name": "support_imgs",
+          "type": "[String]"
+        },
+        {
+          "name": "support_imgs_desc",
+          "type": "[String]"
+        },
+        {
+          "name": "premium",
+          "type": "Int"
+        },
+        {
+          "name": "price",
+          "type": "Float"
+        },
+        {
+          "name": "price_2_payments",
+          "type": "Float"
+        },
+        {
+          "name": "price_4_payments",
+          "type": "Float"
+        },
+        {
+          "name": "price_12_payments",
+          "type": "Float"
+        },
+        {
+          "name": "wc",
+          "type": "Int"
+        },
+        {
+          "name": "meter_price",
+          "type": "Float"
+        },
+        {
+          "name": "age",
+          "type": "Int"
+        },
+        {
+          "name": "area",
+          "type": "Float"
+        },
+        {
+          "name": "fl",
+          "type": "Int"
+        },
+        {
+          "name": "rent_period",
+          "type": "Int"
+        },
+        {
+          "name": "accept_monthly",
+          "type": "Boolean"
+        },
+        {
+          "name": "accept_quarterly",
+          "type": "Boolean"
+        },
+        {
+          "name": "accept_semiannually",
+          "type": "Boolean"
+        },
+        {
+          "name": "beds",
+          "type": "Int"
+        },
+        {
+          "name": "ketchen",
+          "type": "Int"
+        },
+        {
+          "name": "livings",
+          "type": "Int"
+        },
+        {
+          "name": "men_place",
+          "type": "Int"
+        },
+        {
+          "name": "women_place",
+          "type": "Int"
+        },
+        {
+          "name": "apts",
+          "type": "Int"
+        },
+        {
+          "name": "stores",
+          "type": "Int"
+        },
+        {
+          "name": "duplex",
+          "type": "Int"
+        },
+        {
+          "name": "furnished",
+          "type": "Int"
+        },
+        {
+          "name": "driver",
+          "type": "Int"
+        },
+        {
+          "name": "maid",
+          "type": "Int"
+        },
+        {
+          "name": "basement",
+          "type": "Int"
+        },
+        {
+          "name": "lift",
+          "type": "Int"
+        },
+        {
+          "name": "pool",
+          "type": "Int"
+        },
+        {
+          "name": "stairs",
+          "type": "Int"
+        },
+        {
+          "name": "fb",
+          "type": "Int"
+        },
+        {
+          "name": "vb",
+          "type": "Int"
+        },
+        {
+          "name": "tent",
+          "type": "Int"
+        },
+        {
+          "name": "rooms",
+          "type": "Int"
+        },
+        {
+          "name": "wells",
+          "type": "Int"
+        },
+        {
+          "name": "trees",
+          "type": "Int"
+        },
+        {
+          "name": "backyard",
+          "type": "Int"
+        },
+        {
+          "name": "playground",
+          "type": "Int"
+        },
+        {
+          "name": "family",
+          "type": "Int"
+        },
+        {
+          "name": "family_section",
+          "type": "Int"
+        },
+        {
+          "name": "street_direction",
+          "type": "Int"
+        },
+        {
+          "name": "street_width",
+          "type": "Int"
+        },
+        {
+          "name": "type",
+          "type": "Int"
+        },
+        {
+          "name": "car_entrance",
+          "type": "Int"
+        },
+        {
+          "name": "ac",
+          "type": "Int"
+        },
+        {
+          "name": "location",
+          "type": "Location"
+        },
+        {
+          "name": "boosted",
+          "type": "Int"
+        },
+        {
+          "name": "address",
+          "type": "String"
+        },
+        {
+          "name": "content",
+          "type": "String"
+        },
+        {
+          "name": "content_en",
+          "type": "String"
+        },
+        {
+          "name": "services",
+          "type": "[Service]"
+        },
+        {
+          "name": "uri",
+          "type": "String"
+        },
+        {
+          "name": "city_id",
+          "type": "Int"
+        },
+        {
+          "name": "direction_id",
+          "type": "Int"
+        },
+        {
+          "name": "district_id",
+          "type": "Int"
+        },
+        {
+          "name": "province_id",
+          "type": "Int"
+        },
+        {
+          "name": "views",
+          "type": "Int"
+        },
+        {
+          "name": "user",
+          "type": "ListingUser"
+        },
+        {
+          "name": "user_id",
+          "type": "Int"
+        },
+        {
+          "name": "user_type",
+          "type": "Int"
+        },
+        {
+          "name": "extra_unit",
+          "type": "Int"
+        },
+        {
+          "name": "verified",
+          "type": "Int"
+        },
+        {
+          "name": "has_video",
+          "type": "Int"
+        },
+        {
+          "name": "videos",
+          "type": "[Video]"
+        },
+        {
+          "name": "cf_videos",
+          "type": "[CfVideo]"
+        },
+        {
+          "name": "subscription",
+          "type": "ListingSubscription"
+        },
+        {
+          "name": "employee",
+          "type": "ListingEmployee"
+        },
+        {
+          "name": "employee_user_id",
+          "type": "Int"
+        },
+        {
+          "name": "mgr_user_id",
+          "type": "Int"
+        },
+        {
+          "name": "stc_coverage",
+          "type": "StcCoverage"
+        },
+        {
+          "name": "deed_id",
+          "type": "String"
+        },
+        {
+          "name": "owner_name",
+          "type": "String"
+        },
+        {
+          "name": "owner_id",
+          "type": "String"
+        },
+        {
+          "name": "owner_id_type",
+          "type": "DeedIdTypes"
+        },
+        {
+          "name": "is_rent",
+          "type": "Boolean"
+        },
+        {
+          "name": "capacity",
+          "type": "Int"
+        },
+        {
+          "name": "phone_1",
+          "type": "Int"
+        },
+        {
+          "name": "phone_2",
+          "type": "Int"
+        },
+        {
+          "name": "assigned_to",
+          "type": "Int"
+        },
+        {
+          "name": "approved",
+          "type": "Int"
+        },
+        {
+          "name": "gh_id",
+          "type": "Boolean"
+        },
+        {
+          "name": "inspector_images",
+          "type": "[String]"
+        },
+        {
+          "name": "building_no",
+          "type": "Int"
+        },
+        {
+          "name": "unique_listing",
+          "type": "Int"
+        },
+        {
+          "name": "advertiser_type",
+          "type": "AdvertiserTypes"
+        },
+        {
+          "name": "structure",
+          "type": "Int"
+        },
+        {
+          "name": "appraisal_id",
+          "type": "Int"
+        },
+        {
+          "name": "appraisal",
+          "type": "Appraisal"
+        },
+        {
+          "name": "virtual_tour_link",
+          "type": "String"
+        },
+        {
+          "name": "rnpl_monthly_price",
+          "type": "Float"
+        },
+        {
+          "name": "accurate_location",
+          "type": "Boolean"
+        },
+        {
+          "name": "private_listing",
+          "type": "Boolean"
+        },
+        {
+          "name": "blur",
+          "type": "Boolean"
+        },
+        {
+          "name": "location_circle_radius",
+          "type": "CircleRadius"
+        },
+        {
+          "name": "map_premium_services",
+          "type": "[ListingPremiumService]"
+        },
+        {
+          "name": "plan_no",
+          "type": "String"
+        },
+        {
+          "name": "parcel_no",
+          "type": "String"
+        },
+        {
+          "name": "show_parcel_info",
+          "type": "Boolean"
+        },
+        {
+          "name": "project_id",
+          "type": "Int"
+        },
+        {
+          "name": "project",
+          "type": "RealEstatesProject"
+        },
+        {
+          "name": "width",
+          "type": "Float"
+        },
+        {
+          "name": "length",
+          "type": "Float"
+        },
+        {
+          "name": "water_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "electrical_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "drainage_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "private_roof",
+          "type": "Boolean"
+        },
+        {
+          "name": "apartment_in_villa",
+          "type": "Boolean"
+        },
+        {
+          "name": "two_entrances",
+          "type": "Boolean"
+        },
+        {
+          "name": "special_entrance",
+          "type": "Boolean"
+        },
+        {
+          "name": "daily_rentable",
+          "type": "Boolean"
+        },
+        {
+          "name": "closed_reason",
+          "type": "String"
+        },
+        {
+          "name": "closed_by",
+          "type": "String"
+        },
+        {
+          "name": "has_extended_details",
+          "type": "Boolean"
+        },
+        {
+          "name": "hide_contact_details",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_phone",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_whatsapp",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_message",
+          "type": "Boolean"
+        },
+        {
+          "name": "unit_code",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit",
+          "type": "Boolean"
+        },
+        {
+          "name": "bookable_unit_plans",
+          "type": "[String]"
+        },
+        {
+          "name": "bookable_unit_down_payment",
+          "type": "Float"
+        },
+        {
+          "name": "bookable_unit_interested_users_count",
+          "type": "Int"
+        },
+        {
+          "name": "bookable_unit_developer_id",
+          "type": "Int"
+        },
+        {
+          "name": "bookable_unit_project_status",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_type",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_title",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_title_en",
+          "type": "String"
+        },
+        {
+          "name": "rega_advertisement_details_id",
+          "type": "Int"
+        },
+        {
+          "name": "ad_license_number",
+          "type": "String"
+        },
+        {
+          "name": "off_plan_license_number",
+          "type": "String"
+        },
+        {
+          "name": "deed_number",
+          "type": "String"
+        },
+        {
+          "name": "deed_area",
+          "type": "Float"
+        },
+        {
+          "name": "usages",
+          "type": "[String]"
+        },
+        {
+          "name": "rega_licensed",
+          "type": "Boolean"
+        },
+        {
+          "name": "rega_license_url",
+          "type": "String"
+        },
+        {
+          "name": "published",
+          "type": "Boolean"
+        },
+        {
+          "name": "comments_enabled",
+          "type": "Boolean"
+        },
+        {
+          "name": "commission_type",
+          "type": "CommissionTypes"
+        },
+        {
+          "name": "commission_percentage",
+          "type": "Float"
+        },
+        {
+          "name": "commission_amount",
+          "type": "Float"
+        },
+        {
+          "name": "biddable",
+          "type": "Boolean"
+        },
+        {
+          "name": "sov_campaign_id",
+          "type": "Int"
+        },
+        {
+          "name": "obligations_on_the_property",
+          "type": "String"
+        },
+        {
+          "name": "guarantees_and_their_duration",
+          "type": "String"
+        },
+        {
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "name": "end_date",
+          "type": "String"
+        },
+        {
+          "name": "ad_source",
+          "type": "String"
+        },
+        {
+          "name": "property_usages_list",
+          "type": "String"
+        },
+        {
+          "name": "compliance_with_the_saudi_building_code",
+          "type": "Boolean"
+        },
+        {
+          "name": "location_region",
+          "type": "String"
+        },
+        {
+          "name": "location_city",
+          "type": "String"
+        },
+        {
+          "name": "location_district",
+          "type": "String"
+        },
+        {
+          "name": "location_street",
+          "type": "String"
+        },
+        {
+          "name": "location_postal_code",
+          "type": "String"
+        },
+        {
+          "name": "location_building_number",
+          "type": "String"
+        },
+        {
+          "name": "location_additional_number",
+          "type": "String"
+        },
+        {
+          "name": "mot_license_number",
+          "type": "String"
+        },
+        {
+          "name": "whatsapp_requested_count",
+          "type": "Int"
+        },
+        {
+          "name": "whatsapp_responded_count",
+          "type": "Int"
+        },
+        {
+          "name": "precise_location_request_status",
+          "type": "String"
+        },
+        {
+          "name": "precise_location_request_approved_at",
+          "type": "Float"
+        },
+        {
+          "name": "is_exclusive",
+          "type": "Boolean"
+        },
+        {
+          "name": "has_multiple_units",
+          "type": "Boolean"
+        },
+        {
+          "name": "villa_type",
+          "type": "VillaTypes"
+        },
+        {
+          "name": "near_bus",
+          "type": "Boolean"
+        },
+        {
+          "name": "near_metro",
+          "type": "Boolean"
+        },
+        {
+          "name": "freehold_zone",
+          "type": "Boolean"
+        },
+        {
+          "name": "white_lands_percentage",
+          "type": "Float"
+        },
+        {
+          "name": "rega_total_price",
+          "type": "Float"
+        },
+        {
+          "name": "rega_meter_price",
+          "type": "Float"
+        },
+        {
+          "name": "is_auction",
+          "type": "Boolean"
+        },
+        {
+          "name": "is_unique_deed",
+          "type": "Boolean"
+        },
+        {
+          "name": "auction_end_date",
+          "type": "Float"
+        },
+        {
+          "name": "document_pdf",
+          "type": "String"
+        },
+        {
+          "name": "is_precise_location",
+          "type": "Boolean"
+        },
+        {
+          "name": "links",
+          "type": "WebLinks"
+        },
+        {
+          "name": "details",
+          "type": "[String]"
+        },
+        {
+          "name": "alert_box",
+          "type": "ListingAlertBox"
+        }
+      ]
+    },
+    "ElasticWebListing": {
+      "fields": [
+        {
+          "name": "id",
+          "type": "Int"
+        },
+        {
+          "name": "_id",
+          "type": "Int"
+        },
+        {
+          "name": "boosted",
+          "type": "Int"
+        },
+        {
+          "name": "ac",
+          "type": "Int"
+        },
+        {
+          "name": "age",
+          "type": "Int"
+        },
+        {
+          "name": "apts",
+          "type": "Int"
+        },
+        {
+          "name": "area",
+          "type": "Int"
+        },
+        {
+          "name": "backyard",
+          "type": "Int"
+        },
+        {
+          "name": "basement",
+          "type": "Int"
+        },
+        {
+          "name": "beds",
+          "type": "Int"
+        },
+        {
+          "name": "car_entrance",
+          "type": "Int"
+        },
+        {
+          "name": "category",
+          "type": "Int"
+        },
+        {
+          "name": "city_id",
+          "type": "Int"
+        },
+        {
+          "name": "create_time",
+          "type": "Int"
+        },
+        {
+          "name": "published_at",
+          "type": "Int"
+        },
+        {
+          "name": "direction_id",
+          "type": "Int"
+        },
+        {
+          "name": "district_id",
+          "type": "Int"
+        },
+        {
+          "name": "province_id",
+          "type": "Int"
+        },
+        {
+          "name": "driver",
+          "type": "Int"
+        },
+        {
+          "name": "duplex",
+          "type": "Int"
+        },
+        {
+          "name": "extra_unit",
+          "type": "Int"
+        },
+        {
+          "name": "family",
+          "type": "Int"
+        },
+        {
+          "name": "family_section",
+          "type": "Int"
+        },
+        {
+          "name": "fb",
+          "type": "Int"
+        },
+        {
+          "name": "fl",
+          "type": "Int"
+        },
+        {
+          "name": "furnished",
+          "type": "Int"
+        },
+        {
+          "name": "has_img",
+          "type": "Int"
+        },
+        {
+          "name": "imgs",
+          "type": "[String]"
+        },
+        {
+          "name": "imgs_desc",
+          "type": "[String]"
+        },
+        {
+          "name": "ketchen",
+          "type": "Int"
+        },
+        {
+          "name": "last_update",
+          "type": "Int"
+        },
+        {
+          "name": "refresh",
+          "type": "Int"
+        },
+        {
+          "name": "lift",
+          "type": "Int"
+        },
+        {
+          "name": "livings",
+          "type": "Int"
+        },
+        {
+          "name": "location",
+          "type": "Location"
+        },
+        {
+          "name": "maid",
+          "type": "Int"
+        },
+        {
+          "name": "men_place",
+          "type": "Int"
+        },
+        {
+          "name": "meter_price",
+          "type": "Float"
+        },
+        {
+          "name": "playground",
+          "type": "Int"
+        },
+        {
+          "name": "pool",
+          "type": "Int"
+        },
+        {
+          "name": "premium",
+          "type": "Int"
+        },
+        {
+          "name": "price",
+          "type": "Float"
+        },
+        {
+          "name": "price_2_payments",
+          "type": "Float"
+        },
+        {
+          "name": "price_4_payments",
+          "type": "Float"
+        },
+        {
+          "name": "price_12_payments",
+          "type": "Float"
+        },
+        {
+          "name": "rent_period",
+          "type": "Int"
+        },
+        {
+          "name": "accept_monthly",
+          "type": "Boolean"
+        },
+        {
+          "name": "accept_quarterly",
+          "type": "Boolean"
+        },
+        {
+          "name": "accept_semiannually",
+          "type": "Boolean"
+        },
+        {
+          "name": "rooms",
+          "type": "Int"
+        },
+        {
+          "name": "stairs",
+          "type": "Int"
+        },
+        {
+          "name": "stores",
+          "type": "Int"
+        },
+        {
+          "name": "status",
+          "type": "Int"
+        },
+        {
+          "name": "street_direction",
+          "type": "Int"
+        },
+        {
+          "name": "street_width",
+          "type": "Int"
+        },
+        {
+          "name": "tent",
+          "type": "Int"
+        },
+        {
+          "name": "trees",
+          "type": "Int"
+        },
+        {
+          "name": "type",
+          "type": "Int"
+        },
+        {
+          "name": "user_id",
+          "type": "Int"
+        },
+        {
+          "name": "user",
+          "type": "ListingUser"
+        },
+        {
+          "name": "user_type",
+          "type": "Int"
+        },
+        {
+          "name": "vb",
+          "type": "Int"
+        },
+        {
+          "name": "wc",
+          "type": "Int"
+        },
+        {
+          "name": "wells",
+          "type": "Int"
+        },
+        {
+          "name": "women_place",
+          "type": "Int"
+        },
+        {
+          "name": "has_video",
+          "type": "Int"
+        },
+        {
+          "name": "videos",
+          "type": "[Video]"
+        },
+        {
+          "name": "cf_videos",
+          "type": "[CfVideo]"
+        },
+        {
+          "name": "verified",
+          "type": "Int"
+        },
+        {
+          "name": "special",
+          "type": "Int"
+        },
+        {
+          "name": "subscription",
+          "type": "ListingSubscription"
+        },
+        {
+          "name": "employee",
+          "type": "ListingEmployee"
+        },
+        {
+          "name": "employee_user_id",
+          "type": "Int"
+        },
+        {
+          "name": "mgr_user_id",
+          "type": "Int"
+        },
+        {
+          "name": "stc_coverage",
+          "type": "StcCoverage"
+        },
+        {
+          "name": "unique_listing",
+          "type": "Int"
+        },
+        {
+          "name": "advertiser_type",
+          "type": "AdvertiserTypes"
+        },
+        {
+          "name": "appraisal_id",
+          "type": "Int"
+        },
+        {
+          "name": "appraisal",
+          "type": "Appraisal"
+        },
+        {
+          "name": "virtual_tour_link",
+          "type": "String"
+        },
+        {
+          "name": "rnpl_monthly_price",
+          "type": "Float"
+        },
+        {
+          "name": "map_premium_services",
+          "type": "[ListingPremiumService]"
+        },
+        {
+          "name": "project_id",
+          "type": "Int"
+        },
+        {
+          "name": "project",
+          "type": "RealEstatesProject"
+        },
+        {
+          "name": "approved",
+          "type": "Int"
+        },
+        {
+          "name": "gh_id",
+          "type": "Boolean"
+        },
+        {
+          "name": "private_listing",
+          "type": "Boolean"
+        },
+        {
+          "name": "blur",
+          "type": "Boolean"
+        },
+        {
+          "name": "location_circle_radius",
+          "type": "CircleRadius"
+        },
+        {
+          "name": "width",
+          "type": "Float"
+        },
+        {
+          "name": "length",
+          "type": "Float"
+        },
+        {
+          "name": "water_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "electrical_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "drainage_availability",
+          "type": "Boolean"
+        },
+        {
+          "name": "private_roof",
+          "type": "Boolean"
+        },
+        {
+          "name": "apartment_in_villa",
+          "type": "Boolean"
+        },
+        {
+          "name": "two_entrances",
+          "type": "Boolean"
+        },
+        {
+          "name": "special_entrance",
+          "type": "Boolean"
+        },
+        {
+          "name": "daily_rentable",
+          "type": "Boolean"
+        },
+        {
+          "name": "has_extended_details",
+          "type": "Boolean"
+        },
+        {
+          "name": "extended_details",
+          "type": "ListingExtendedDetails"
+        },
+        {
+          "name": "hide_contact_details",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_phone",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_whatsapp",
+          "type": "Boolean"
+        },
+        {
+          "name": "disable_message",
+          "type": "Boolean"
+        },
+        {
+          "name": "unit_code",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit",
+          "type": "Boolean"
+        },
+        {
+          "name": "bookable_unit_reserved",
+          "type": "Boolean"
+        },
+        {
+          "name": "bookable_unit_interested_users_count",
+          "type": "Int"
+        },
+        {
+          "name": "bookable_unit_features_meta_key_ids",
+          "type": "[Int]"
+        },
+        {
+          "name": "bookable_unit_facilities_meta_key_ids",
+          "type": "[Int]"
+        },
+        {
+          "name": "bookable_unit_plans",
+          "type": "[String]"
+        },
+        {
+          "name": "bookable_unit_developer_id",
+          "type": "Int"
+        },
+        {
+          "name": "bookable_unit_project_status",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_type",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_title",
+          "type": "String"
+        },
+        {
+          "name": "bookable_unit_project_title_en",
+          "type": "String"
+        },
+        {
+          "name": "ad_license_number",
+          "type": "String"
+        },
+        {
+          "name": "off_plan_license_number",
+          "type": "String"
+        },
+        {
+          "name": "deed_number",
+          "type": "String"
+        },
+        {
+          "name": "deed_area",
+          "type": "Float"
+        },
+        {
+          "name": "usages",
+          "type": "[String]"
+        },
+        {
+          "name": "rega_licensed",
+          "type": "Boolean"
+        },
+        {
+          "name": "rega_license_url",
+          "type": "String"
+        },
+        {
+          "name": "published",
+          "type": "Boolean"
+        },
+        {
+          "name": "comments_enabled",
+          "type": "Boolean"
+        },
+        {
+          "name": "commission_type",
+          "type": "CommissionTypes"
+        },
+        {
+          "name": "commission_percentage",
+          "type": "Float"
+        },
+        {
+          "name": "commission_amount",
+          "type": "Float"
+        },
+        {
+          "name": "biddable",
+          "type": "Boolean"
+        },
+        {
+          "name": "sov_campaign_id",
+          "type": "Int"
+        },
+        {
+          "name": "plan_no",
+          "type": "String"
+        },
+        {
+          "name": "parcel_no",
+          "type": "String"
+        },
+        {
+          "name": "obligations_on_the_property",
+          "type": "String"
+        },
+        {
+          "name": "guarantees_and_their_duration",
+          "type": "String"
+        },
+        {
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "name": "end_date",
+          "type": "String"
+        },
+        {
+          "name": "ad_source",
+          "type": "String"
+        },
+        {
+          "name": "property_usages_list",
+          "type": "String"
+        },
+        {
+          "name": "compliance_with_the_saudi_building_code",
+          "type": "Boolean"
+        },
+        {
+          "name": "location_region",
+          "type": "String"
+        },
+        {
+          "name": "location_city",
+          "type": "String"
+        },
+        {
+          "name": "location_district",
+          "type": "String"
+        },
+        {
+          "name": "location_street",
+          "type": "String"
+        },
+        {
+          "name": "location_postal_code",
+          "type": "String"
+        },
+        {
+          "name": "location_building_number",
+          "type": "String"
+        },
+        {
+          "name": "location_additional_number",
+          "type": "String"
+        },
+        {
+          "name": "whatsapp_requested_count",
+          "type": "Int"
+        },
+        {
+          "name": "whatsapp_responded_count",
+          "type": "Int"
+        },
+        {
+          "name": "mot_license_number",
+          "type": "String"
+        },
+        {
+          "name": "precise_location_request_status",
+          "type": "String"
+        },
+        {
+          "name": "precise_location_request_approved_at",
+          "type": "Float"
+        },
+        {
+          "name": "is_exclusive",
+          "type": "Boolean"
+        },
+        {
+          "name": "has_multiple_units",
+          "type": "Boolean"
+        },
+        {
+          "name": "villa_type",
+          "type": "VillaTypes"
+        },
+        {
+          "name": "near_bus",
+          "type": "Boolean"
+        },
+        {
+          "name": "near_metro",
+          "type": "Boolean"
+        },
+        {
+          "name": "freehold_zone",
+          "type": "Boolean"
+        },
+        {
+          "name": "white_lands_percentage",
+          "type": "Float"
+        },
+        {
+          "name": "is_auction",
+          "type": "Boolean"
+        },
+        {
+          "name": "is_unique_deed",
+          "type": "Boolean"
+        },
+        {
+          "name": "auction_end_date",
+          "type": "Float"
+        },
+        {
+          "name": "document_pdf",
+          "type": "String"
+        },
+        {
+          "name": "is_precise_location",
+          "type": "Boolean"
+        },
+        {
+          "name": "rega_total_price",
+          "type": "Float"
+        },
+        {
+          "name": "rega_meter_price",
+          "type": "Float"
+        },
+        {
+          "name": "content",
+          "type": "String"
+        },
+        {
+          "name": "content_en",
+          "type": "String"
+        },
+        {
+          "name": "address",
+          "type": "String"
+        },
+        {
+          "name": "district",
+          "type": "String"
+        },
+        {
+          "name": "direction",
+          "type": "String"
+        },
+        {
+          "name": "city",
+          "type": "String"
+        },
+        {
+          "name": "title",
+          "type": "String"
+        },
+        {
+          "name": "path",
+          "type": "String"
+        },
+        {
+          "name": "uri",
+          "type": "String"
+        },
+        {
+          "name": "native",
+          "type": "WebNativeListing"
+        },
+        {
+          "name": "range_price",
+          "type": "Float"
+        },
+        {
+          "name": "original_range_price",
+          "type": "Float"
+        },
+        {
+          "name": "daily_renting_discount_reason",
+          "type": "DailyRentingDiscountReasons"
+        },
+        {
+          "name": "alert_box",
+          "type": "ListingAlertBox"
+        }
+      ]
+    }
+  },
+  "observations": {
+    "contactDetailsGating": {
+      "summary": "Aqar withholds contact details from unauthenticated requests. Schema exposes them, but live responses never populate them anonymously.",
+      "testedListingIds": [
+        6650492,
+        6781382,
+        6760998,
+        6693702,
+        6705451,
+        6709426
+      ],
+      "observed": "phone_1=null, phone_2=null, owner_name=null, user.phone=0, hide_contact_details=false, disable_phone=false on every tested listing",
+      "testedAt": "2026-08-24"
+    },
+    "searchSort": {
+      "summary": "Web.find accepts a sort variable, but live responses have been observed ignoring price ordering."
+    },
+    "cliFieldUsage": {
+      "summary": "The CLI requests the same 10 GraphQL fields in both operations; 8 are mapped into normalized output.",
+      "requestedFields": [
+        "id",
+        "title",
+        "price",
+        "area",
+        "rooms",
+        "category",
+        "type",
+        "city",
+        "district",
+        "path"
+      ],
+      "normalizedMappingDrops": [
+        "rooms",
+        "type"
+      ],
+      "getOperation": {
+        "returnsType": "WebListing",
+        "requested": 10,
+        "availableOnType": 196
+      },
+      "searchOperation": {
+        "returnsType": "ElasticWebListing",
+        "requested": 10,
+        "availableOnType": 180
+      },
+      "lookupDocumentsUseOtherTypes": {
+        "Category": [
+          "id",
+          "name",
+          "plural",
+          "uri"
+        ],
+        "City": [
+          "city_id",
+          "name",
+          "name_en"
+        ],
+        "District": [
+          "district_id",
+          "name",
+          "name_en"
+        ]
+      },
+      "countedAt": "2026-08-24"
+    },
+    "webListingVsInternalListing": {
+      "summary": "Web.listing returns WebListing (196 fields) and Web.find returns ElasticWebListing listings (180 fields). The internal Listing type (192 fields) is a different object used by root Query.Listing containers; its contact/owner fields are not necessarily available on the web-facing types."
+    }
+  }
+}
