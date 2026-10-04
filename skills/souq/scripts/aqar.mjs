@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-// aqarcli/src/cli.ts
+// skills/souq/aqarcli/src/cli.ts
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 
-// aqarcli/src/config.ts
+// skills/souq/aqarcli/src/config.ts
 import { readFile } from "node:fs/promises";
 
-// aqarcli/src/errors.ts
+// skills/souq/aqarcli/src/errors.ts
 class AqarError extends Error {
   constructor(message) {
     super(message);
@@ -15,7 +15,7 @@ class AqarError extends Error {
   }
 }
 
-// aqarcli/src/config.ts
+// skills/souq/aqarcli/src/config.ts
 var requiredString = (value, name) => {
   if (typeof value !== "string" || value.length === 0) {
     throw new AqarError(`Configuration requires ${name}.`);
@@ -91,7 +91,7 @@ var optionalString = (value, name) => {
   return requiredString(value, name);
 };
 
-// aqarcli/src/graphql.ts
+// skills/souq/aqarcli/src/graphql.ts
 var executeGraphql = async (endpoint, headers, query, variables, fetcher = fetch) => {
   let response;
   try {
@@ -127,7 +127,7 @@ var executeGraphql = async (endpoint, headers, query, variables, fetcher = fetch
   return result.data;
 };
 
-// aqarcli/src/normalize.ts
+// skills/souq/aqarcli/src/normalize.ts
 var getPath = (value, path) => path.split(".").reduce((current, key) => current !== null && typeof current === "object" && !Array.isArray(current) ? current[key] : undefined, value);
 var stringOrNull = (value) => typeof value === "string" ? value : value === null || value === undefined ? null : String(value);
 var numberOrNull = (value) => typeof value === "number" && Number.isFinite(value) ? value : null;
@@ -147,7 +147,7 @@ var normalizeListing = (value, mapping, retrievedAt = new Date().toISOString()) 
   retrievedAt
 });
 
-// aqarcli/src/source.ts
+// skills/souq/aqarcli/src/source.ts
 var CATEGORIES_QUERY = `query AqarCategories {
   Web {
     en: categories(lang: en) { id name plural uri }
@@ -295,7 +295,7 @@ var findLocationId = (values, requested, idField, label) => {
   return Number(match[idField]);
 };
 
-// aqarcli/src/cli.ts
+// skills/souq/aqarcli/src/cli.ts
 var usage = `Usage:
   aqar search [--city CITY] [--district DISTRICT] [--purpose sale|rent|booking] [--type TYPE] [--min-price AMOUNT] [--max-price AMOUNT] [--limit COUNT] [--variables JSON] [--json] [--config PATH]
   aqar get <id-or-url> [--json] [--config PATH]
@@ -381,7 +381,7 @@ ${usage}`);
   console.log(values.json ? JSON.stringify(listings, null, 2) : table(listings));
 };
 
-// aqarcli/src/bin.ts
+// skills/souq/aqarcli/src/bin.ts
 run(process.argv.slice(2)).catch((error) => {
   console.error(error instanceof Error ? error.message : String(error));
   process.exitCode = 1;

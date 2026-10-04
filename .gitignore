@@ -3,5 +3,5 @@
 **/.opencode/
 node_modules/
 **/node_modules/
-harajcli/dist/
-aqarcli/dist/
+skills/souq/harajcli/dist/
+skills/souq/aqarcli/dist/

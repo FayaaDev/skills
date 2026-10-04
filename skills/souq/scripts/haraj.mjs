@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-// harajcli/src/cli.ts
+// skills/souq/harajcli/src/cli.ts
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 
-// harajcli/src/config.ts
+// skills/souq/harajcli/src/config.ts
 import { readFile } from "node:fs/promises";
 
-// harajcli/src/errors.ts
+// skills/souq/harajcli/src/errors.ts
 class HarajError extends Error {
   constructor(message) {
     super(message);
@@ -15,7 +15,7 @@ class HarajError extends Error {
   }
 }
 
-// harajcli/src/config.ts
+// skills/souq/harajcli/src/config.ts
 var requiredString = (value, name) => {
   if (typeof value !== "string" || value.length === 0)
     throw new HarajError(`Configuration requires ${name}.`);
@@ -62,7 +62,7 @@ var loadConfig = async (path) => {
   };
 };
 
-// harajcli/src/graphql.ts
+// skills/souq/harajcli/src/graphql.ts
 var executeGraphql = async (endpoint, queryName, headers2, query, variables, fetcher = fetch) => {
   const url = new URL(endpoint);
   url.searchParams.set("queryName", queryName);
@@ -91,7 +91,7 @@ var executeGraphql = async (endpoint, queryName, headers2, query, variables, fet
   return result.data;
 };
 
-// harajcli/src/source.ts
+// skills/souq/harajcli/src/source.ts
 var getPath = (value, path) => path.split(".").reduce((current, key) => current !== null && typeof current === "object" && !Array.isArray(current) ? current[key] : Array.isArray(current) && /^\d+$/.test(key) ? current[Number(key)] : undefined, value);
 var stringOrNull = (value) => typeof value === "string" ? value : value === null || value === undefined ? null : String(value);
 var scalarOrNull = (value) => typeof value === "string" || typeof value === "number" ? value : null;
@@ -170,7 +170,7 @@ var parsePostId = (value) => {
 };
 var isGraphqlInt = (value) => Number.isSafeInteger(value) && value > 0 && value <= 2147483647;
 
-// harajcli/src/cli.ts
+// skills/souq/harajcli/src/cli.ts
 var usage = `Usage:
   haraj search [keyword] [--body-text TEXT] [--city CITY] [--tag TAG] [--page NUMBER] [--limit COUNT] [--during-date 1days|3days|1week|1months] [--near @LAT,LON] [--images] [--videos] [--json] [--config PATH] [--variables JSON]
   haraj get <id-or-url> [--json] [--config PATH]
@@ -263,7 +263,7 @@ ${usage}`);
   console.log(values.json ? JSON.stringify(listings, null, 2) : table(listings));
 };
 
-// harajcli/src/bin.ts
+// skills/souq/harajcli/src/bin.ts
 run(process.argv.slice(2)).catch((error) => {
   console.error(error instanceof Error ? error.message : String(error));
   process.exitCode = 1;

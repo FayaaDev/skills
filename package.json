@@ -7,20 +7,20 @@
     "node": ">=18"
   },
   "workspaces": [
-    "harajcli",
-    "aqarcli"
+    "skills/souq/harajcli",
+    "skills/souq/aqarcli"
   ],
   "scripts": {
     "build": "bun run build:skill",
-    "build:skill": "bun build harajcli/src/bin.ts --target=node --format=esm --outfile skills/souq/scripts/haraj.mjs && bun build aqarcli/src/bin.ts --target=node --format=esm --outfile skills/souq/scripts/aqar.mjs && cp harajcli/haraj.config.json skills/souq/haraj.config.json && cp aqarcli/aqar.config.json skills/souq/aqar.config.json",
+    "build:skill": "bun build skills/souq/harajcli/src/bin.ts --target=node --format=esm --outfile skills/souq/scripts/haraj.mjs && bun build skills/souq/aqarcli/src/bin.ts --target=node --format=esm --outfile skills/souq/scripts/aqar.mjs && cp skills/souq/harajcli/haraj.config.json skills/souq/haraj.config.json && cp skills/souq/aqarcli/aqar.config.json skills/souq/aqar.config.json",
     "check": "bun run check:haraj && bun run check:aqar",
-    "check:haraj": "bun run --cwd harajcli check",
-    "check:aqar": "bun run --cwd aqarcli check",
+    "check:haraj": "bun run --cwd skills/souq/harajcli check",
+    "check:aqar": "bun run --cwd skills/souq/aqarcli check",
     "test": "bun run build:skill && bun run test:haraj && bun run test:aqar && node --test test/packaged-runners.test.mjs",
-    "test:haraj": "bun run --cwd harajcli test",
-    "test:aqar": "bun run --cwd aqarcli test",
-    "build:haraj": "bun run --cwd harajcli build",
-    "build:aqar": "bun run --cwd aqarcli build",
+    "test:haraj": "bun run --cwd skills/souq/harajcli test",
+    "test:aqar": "bun run --cwd skills/souq/aqarcli test",
+    "build:haraj": "bun run --cwd skills/souq/harajcli build",
+    "build:aqar": "bun run --cwd skills/souq/aqarcli build",
     "verify": "bun run check && bun run test && bun run build:haraj && bun run build:aqar"
   }
 }

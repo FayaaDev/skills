@@ -12,6 +12,8 @@ The bundled runners require Node.js 18+ and network access to the marketplaces. 
 
 ## Development
 
+CLI source and tests live in `skills/souq/harajcli/` and `skills/souq/aqarcli/`.
+
 Development requires Bun 1.4+. Install dependencies and run the complete verification suite with:
 
 ```bash
