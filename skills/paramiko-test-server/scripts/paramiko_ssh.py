@@ -4,10 +4,9 @@
 import argparse
 import shlex
 import stat
+import subprocess
 import sys
 from pathlib import Path
-
-import paramiko
 
 
 def read_credentials(path):
@@ -30,8 +29,10 @@ def read_credentials(path):
         values[key.strip().lower()] = value
 
     missing = [key for key in ("user", "pass", "ip") if not values.get(key)]
-    if missing:
-        raise ValueError("credential file must define User, Pass, and IP")
+    if missing and not values.get("name"):
+        raise ValueError("credential file must define User, Pass, and IP, or Name")
+    if missing and (values["name"].startswith("-") or any(c.isspace() for c in values["name"])):
+        raise ValueError("Name must be a single SSH host alias and cannot start with '-'")
     return values
 
 
@@ -57,6 +58,21 @@ def main():
     except (OSError, ValueError) as error:
         print(f"Configuration error: {error}", file=sys.stderr)
         return 2
+
+    if not all(credentials.get(key) for key in ("user", "pass", "ip")):
+        if args.upload:
+            print("Configuration error: uploads require User, Pass, and IP", file=sys.stderr)
+            return 2
+        try:
+            return subprocess.run(
+                ["ssh", "-o", "StrictHostKeyChecking=yes", credentials["name"], args.command],
+                check=False,
+            ).returncode
+        except OSError as error:
+            print(f"SSH failed: {type(error).__name__}", file=sys.stderr)
+            return 1
+
+    import paramiko
 
     command = args.command
     if args.sudo:
