@@ -10,6 +10,16 @@ npx skills add https://github.com/FayaaDev/skills --skill souq
 
 The bundled runners require Node.js 18+ and network access to the marketplaces. They do not require global CLI links or an npm install.
 
+### Paramiko Test Server
+
+Run commands on a configured test/staging server over SSH using a protected local `.ssh` file containing credentials or an SSH host alias.
+
+```bash
+npx skills add https://github.com/FayaaDev/skills --skill paramiko-test-server
+```
+
+Requires Python 3 and network access. Credential mode requires Paramiko (or `uv` to provide it); SSH alias mode uses native `ssh`. See [setup and usage](skills/paramiko-test-server/SKILL.md).
+
 ## Development
 
 CLI source and tests live in `skills/souq/harajcli/` and `skills/souq/aqarcli/`.

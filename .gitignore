@@ -5,3 +5,16 @@ node_modules/
 **/node_modules/
 skills/souq/harajcli/dist/
 skills/souq/aqarcli/dist/
+
+# Local credentials
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+credentials.json
+service-account*.json
+!.env.example
+!.env.sample
+!.env.template
